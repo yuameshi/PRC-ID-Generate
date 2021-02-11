@@ -1,7 +1,7 @@
-﻿<!DOCTYPE html>
-<!-- saved from url=(0014)about:internet -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
     <title>ID-Generate</title>
 </head>
 <body>
@@ -11,9 +11,9 @@
 <script type="text/javascript">
 function gen(){
     var date = new Date();
-    var locale = window.prompt("指定地区编码(5位数)","");
-    var year = window.prompt("指定出生年份(0000-"+date.getFullYear()+"):",date.getFullYear());
-    var month = window.prompt("指定出生月份(01-12):",date.getMonth()+1);
+    var locale = prompt("指定地区编码(5位数)","");
+    var year = prompt("指定出生年份(0000-"+date.getFullYear()+"):",date.getFullYear());
+    var month = prompt("指定出生月份(01-12):",date.getMonth()+1);
     if(month.length == 1){month="0"+month;}
     var day = window.prompt("指定出生日期(01-31):",date.getDate());
     if(day.length == 1){day="0"+day;}
@@ -24,7 +24,7 @@ function gen(){
         window.alert("错误：用户取消！");
         return;
     }else{
-        var id_str = locale+year+month+day+num+sex;
+        var id_str = locale.toString() + year.toString()+month.toString()+day.toString()+num.toString()+sex.toString();
     	if(id_str.length != 17){
     		window.alert("错误：格式错误（非17位）");
     	}
@@ -42,5 +42,5 @@ function gen(){
     }
 }
 </script>
-
-</body></html>
+</body>
+</html>
